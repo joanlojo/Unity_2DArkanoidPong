@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\kill.cs" />
     <Compile Include="Assets\Scripts\moverBarra.cs" />
     <Compile Include="Assets\Scripts\moverBarra2.cs" />
+    <Compile Include="Assets\Scripts\pelota.cs" />
     <Compile Include="Assets\Scripts\reset.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

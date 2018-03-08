@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class detectarGol2 : MonoBehaviour {
     public int gol2;
     public Text text2;
+    public GameObject ball;
+
     private void Start()
     {
         gol2 = 0;
@@ -16,8 +18,8 @@ public class detectarGol2 : MonoBehaviour {
         {
             gol2 += 1;
             text2.text = gol2.ToString();
-            other.transform.position = new Vector3(0, 4, -4);
-            other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(1, 1, 1);
+            //Destroy(other);
+            Instantiate(ball, new Vector3(0, 4, 0), Quaternion.identity);
         }
     }
 }
