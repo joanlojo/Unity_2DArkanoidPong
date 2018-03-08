@@ -25,7 +25,7 @@ public class detectarGol : MonoBehaviour {
             {
                 gol += 1;
                 text.text = gol.ToString();
-                Instantiate(ball, new Vector3(0, 4, 0), Quaternion.identity);
+                Instantiate(ball, new Vector3(10, 10.6f, 0), Quaternion.identity);
             }
         }
     }

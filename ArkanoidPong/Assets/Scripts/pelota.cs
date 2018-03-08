@@ -26,7 +26,7 @@ public class pelota : MonoBehaviour
     float hitFactor(Vector2 ballPos, Vector2 racketPos,
                 float racketWidth)
     {
-        return (racketPos.x - ballPos.x) / racketWidth;
+        return (ballPos.x - racketPos.x) / racketWidth;
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -39,10 +39,9 @@ public class pelota : MonoBehaviour
                                 col.transform.position,
                                 col.collider.bounds.size.x);
 
-            Vector2 dir = new Vector2(x, -1).normalized;
 
          
-            GetComponent<Rigidbody2D>().velocity = dir * speed;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(x * speed, 1 * Mathf.Abs(speed));
         }
 
   
@@ -53,10 +52,8 @@ public class pelota : MonoBehaviour
                                 col.transform.position,
                                 col.collider.bounds.size.x);
 
-            Vector2 dir = new Vector2(x, -1).normalized;
 
-            
-            GetComponent<Rigidbody2D>().velocity = dir * speed;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(x * speed, 1 * Mathf.Abs(speed));
         }
     }
 }
