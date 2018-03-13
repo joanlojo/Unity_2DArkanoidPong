@@ -23,37 +23,20 @@ public class pelota : MonoBehaviour
 
     }
 
-    float hitFactor(Vector2 ballPos, Vector2 racketPos,
-                float racketWidth)
-    {
-        return (ballPos.x - racketPos.x) / racketWidth;
-    }
-
     void OnCollisionEnter2D(Collision2D col)
     {
   
         if (col.gameObject.name == "barra")
         {
-          
-            float x = hitFactor(transform.position,
-                                col.transform.position,
-                                col.collider.bounds.size.x);
-
-
-         
-            GetComponent<Rigidbody2D>().velocity = new Vector2(x * speed, 1 * Mathf.Abs(speed));
+            float sign = transform.position.x - col.transform.position.x;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(sign * Mathf.Abs(speed), Mathf.Abs(speed));
         }
 
   
         if (col.gameObject.name == "barra2")
         {
-      
-            float x = hitFactor(transform.position,
-                                col.transform.position,
-                                col.collider.bounds.size.x);
-
-
-            GetComponent<Rigidbody2D>().velocity = new Vector2(x * speed, 1 * Mathf.Abs(speed));
+            float sign = transform.position.x - col.transform.position.x;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(sign * Mathf.Abs(speed), Mathf.Abs(speed));
         }
     }
 }
